@@ -19,6 +19,8 @@
       text-align: center;
       padding: 2.5rem 1rem;
       animation: glow 4s infinite alternate;
+      perspective: 1000px;
+      position: relative;
     }
 
     @keyframes glow {
@@ -26,18 +28,45 @@
       to { box-shadow: 0 0 25px #0074D9; }
     }
 
+    #languageSelect {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      padding: 8px;
+      border-radius: 10px;
+      border: none;
+      font-weight: bold;
+      background: #00ffcc;
+      color: #000;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #languageSelect:hover {
+      transform: scale(1.05);
+      background: #00ccaa;
+    }
+
     header h1 {
       font-size: 2.8rem;
       letter-spacing: 2px;
+      transform: rotateY(10deg);
       animation: floatText 5s infinite alternate ease-in-out;
+      cursor: pointer;
     }
 
     @keyframes floatText {
-      from { transform: translateY(0); }
-      to { transform: translateY(-5px); }
+      from { transform: rotateY(10deg) translateY(0); }
+      to { transform: rotateY(-10deg) translateY(-5px); }
     }
 
-    /* SLIDER INFINITO */
+    header p {
+      margin-top: .5rem;
+      font-size: 1.2rem;
+      opacity: 0.9;
+      animation: fadeIn 2s ease forwards;
+    }
+
     .slider {
       position: relative;
       width: 100%;
@@ -61,6 +90,10 @@
       transition: transform 5s ease;
     }
 
+    .slides img:hover {
+      transform: scale(1.05);
+    }
+
     @keyframes scrollInfinite {
       from { transform: translateX(0); }
       to { transform: translateX(-100%); }
@@ -72,14 +105,37 @@
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
+      color: #fff;
+      z-index: 2;
+      animation: fadeInUp 2s ease forwards;
     }
 
     .hero-text h2 {
       font-size: 3rem;
+      text-shadow: 0 0 20px rgba(0,0,0,0.8);
       background: linear-gradient(90deg, #00e6ff, #00ff99);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 20px rgba(0,0,0,0.8);
+      animation: textFloat 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes textFloat {
+      from { transform: perspective(800px) rotateX(15deg) translateY(0); }
+      to { transform: perspective(800px) rotateX(-15deg) translateY(-8px); }
+    }
+
+    .hero-text a {
+      display: inline-block;
+      margin-top: 1.5rem;
+      background: linear-gradient(90deg, #25D366, #00ff99);
+      color: white;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 0 15px rgba(0,255,153,0.6);
+      transition: all 0.3s ease;
+      cursor: pointer;
     }
 
     section {
@@ -87,6 +143,7 @@
       max-width: 1100px;
       margin: auto;
       text-align: center;
+      animation: fadeInUp 2s ease;
     }
 
     h2 {
@@ -97,7 +154,26 @@
       -webkit-text-fill-color: transparent;
     }
 
-    /* FORMULARIO */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service {
+      background: rgba(255,255,255,0.05);
+      border-radius: 15px;
+      padding: 1.5rem;
+      transition: 0.4s;
+    }
+
+    .service img {
+      width: 100%;
+      border-radius: 12px;
+      height: 160px;
+      object-fit: cover;
+    }
+
     .comment-box {
       background: rgba(255,255,255,0.05);
       padding: 2rem;
@@ -105,35 +181,6 @@
       max-width: 600px;
       margin: 3rem auto;
       border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 0 15px rgba(0,255,153,0.2);
-    }
-
-    .comment-box input,
-    .comment-box textarea,
-    .comment-box select {
-      width: 100%;
-      padding: 0.8rem;
-      margin: 0.8rem 0;
-      border-radius: 8px;
-      border: none;
-      outline: none;
-      font-size: 1rem;
-    }
-
-    .comment-box button {
-      background: linear-gradient(90deg, #25D366, #00ff99);
-      color: white;
-      border: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 50px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .comment-box button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(0,255,153,0.8);
     }
 
     footer {
@@ -144,160 +191,192 @@
       font-size: 0.9rem;
       letter-spacing: 1px;
     }
-
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: linear-gradient(90deg, #25D366, #00ff99);
-      color: white;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      box-shadow: 0 0 15px rgba(0,255,153,0.5);
-      transition: 0.3s;
-      z-index: 100;
-      text-decoration: none;
-    }
-
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 25px rgba(0,255,153,0.9);
-    }
-
-    @media (max-width: 768px) {
-      .hero-text h2 { font-size: 2rem; }
-      header h1 { font-size: 2rem; }
-    }
   </style>
 </head>
 <body>
   <header>
-    <h1>🚗 Marcos Rent Car</h1>
-    <p>Conduce el Futuro del Turismo en Punta Cana</p>
+    <select id="languageSelect">
+      <option value="es">🇪🇸 Español</option>
+      <option value="en">🇬🇧 English</option>
+      <option value="fr">🇫🇷 Français</option>
+      <option value="it">🇮🇹 Italiano</option>
+      <option value="ru">🇷🇺 Русский</option>
+      <option value="pt">🇵🇹 Português</option>
+    </select>
+
+    <h1 id="mainTitle">🚗 Marcos Rent Car</h1>
+    <p id="subtitle">Conduce el Futuro del Turismo en Punta Cana</p>
   </header>
 
   <div class="slider">
     <div class="slides">
-      <img src="https://media.gq.com.mx/photos/65eb81c6e4788bcc1e703bcd/16:9/w_2560%2Cc_limit/Autos_deportivos_de_equipos_de_la_Fo%25CC%2581rmula_1.jpg">
-      <img src="https://media.ed.edmunds-media.com/honda/cr-v/2026/oem/2026_honda_cr-v_4dr-suv_trailsport-hybrid_fq_oem_1_1600.jpg">
-      <img src="https://cdn.milenio.com/uploads/media/2019/08/02/medida-involucra-minivans-fabricaron-agosto_7_0_1607_1000.jpeg">
-      <img src="https://media.revistagq.com/photos/5ca5f45abfc0eb2b9f1c814d/4:3/w_1200,h_900,c_limit/rubicon_7387.png">
-      <!-- duplicación -->
-      <img src="https://media.gq.com.mx/photos/65eb81c6e4788bcc1e703bcd/16:9/w_2560%2Cc_limit/Autos_deportivos_de_equipos_de_la_Fo%25CC%2581rmula_1.jpg">
-      <img src="https://media.ed.edmunds-media.com/honda/cr-v/2026/oem/2026_honda-cr-v_4dr-suv_trailsport-hybrid_fq_oem_1_1600.jpg">
-      <img src="https://cdn.milenio.com/uploads/media/2019/08/02/medida-involucra-minivans-fabricaron-agosto_7_0_1607_1000.jpeg">
-      <img src="https://media.revistagq.com/photos/5ca5f45abfc0eb2b9f1c814d/4:3/w_1200,h_900,c_limit/rubicon_7387.png">
+      <img src="https://media.gq.com.mx/photos/65eb81c6e4788bcc1e703bcd/16:9/w_2560%2Cc_limit/Autos_deportivos_de_equipos_de_la_Fo%25CC%2581rmula_1.jpg" alt="">
+      <img src="https://media.ed.edmunds-media.com/honda/cr-v/2026/oem/2026_honda_cr-v_4dr-suv_trailsport-hybrid_fq_oem_1_1600.jpg" alt="">
     </div>
+
     <div class="hero-text">
-      <h2>Explora con Estilo, Conduce con Libertad</h2>
+      <h2 id="heroText">Explora con Estilo, Conduce con Libertad</h2>
+      <a id="whatsappBtn" href="#">💬 Reserva por WhatsApp</a>
     </div>
   </div>
 
+  <section id="servicios">
+    <h2 id="servicesTitle">Servicios Premium</h2>
+    <div class="services">
+      <div class="service">
+        <img src="https://beforeboarding.com/wp-content/uploads/2024/01/39-1024x640.jpg" alt="">
+        <h3 id="service1Title">Renta de Autos</h3>
+        <p id="service1Text">Autos deportivos, familiares y SUV modernos, perfectos para cualquier viaje.</p>
+      </div>
+      <div class="service">
+        <img src="https://inpunto.la/wp-content/uploads/2021/04/Traslado-corporativo_como-elegir-el-mejor-servicio.jpg" alt="">
+        <h3 id="service2Title">Transporte VIP</h3>
+        <p id="service2Text">Viaja con lujo y puntualidad, con chofer privado desde y hacia el aeropuerto.</p>
+      </div>
+    </div>
+  </section>
+
   <section id="comentarios">
-    <h2 id="titulo-form">💬 Déjanos tu comentario</h2>
+    <h2 id="commentTitle">💬 Déjanos tu comentario</h2>
     <div class="comment-box">
       <input type="text" id="nombre" placeholder="Tu nombre" required>
       <input type="email" id="correo" placeholder="Tu correo electrónico" required>
       <textarea id="comentario" rows="4" placeholder="Escribe tu comentario..." required></textarea>
-      
-      <select id="idioma" required onchange="cambiarIdioma()">
-        <option value="">🌐 Selecciona tu idioma</option>
-        <option value="Español">🇪🇸 Español</option>
-        <option value="Inglés">🇬🇧 English</option>
-        <option value="Ruso">🇷🇺 Русский</option>
-        <option value="Francés">🇫🇷 Français</option>
-        <option value="Italiano">🇮🇹 Italiano</option>
-        <option value="Portugués">🇵🇹 Português</option>
-      </select>
-
-      <button id="btnEnviar" onclick="enviarWhatsApp()">Enviar por WhatsApp</button>
+      <button id="commentBtn">Enviar por WhatsApp</button>
     </div>
   </section>
 
-  <footer>
+  <section class="contact">
+    <h2 id="contactTitle">📞 Contáctanos</h2>
+    <p id="contactWhatsApp">WhatsApp: <strong>+1 (809) 393-7692</strong></p>
+    <p id="contactEmail">Email: <strong>marcobastardo958@gmail.com</strong></p>
+    <a id="contactBtn" href="#">💬 Escribir por WhatsApp</a>
+  </section>
+
+  <footer id="footerText">
     © 2025 Marcos Rent Car | Punta Cana, República Dominicana
   </footer>
 
-  <a href="https://wa.me/18093937692?text=Hola%20Marcos%20Rent%20Car!" class="whatsapp-float" target="_blank">💬</a>
-
   <script>
-    const textos = {
-      Español: {
-        titulo: "💬 Déjanos tu comentario",
-        nombre: "Tu nombre",
-        correo: "Tu correo electrónico",
-        comentario: "Escribe tu comentario...",
-        boton: "Enviar por WhatsApp"
+    const translations = {
+      es: {
+        subtitle: "Conduce el Futuro del Turismo en Punta Cana",
+        heroText: "Explora con Estilo, Conduce con Libertad",
+        whatsapp: "💬 Reserva por WhatsApp",
+        services: "Servicios Premium",
+        service1Title: "Renta de Autos",
+        service1Text: "Autos deportivos, familiares y SUV modernos, perfectos para cualquier viaje.",
+        service2Title: "Transporte VIP",
+        service2Text: "Viaja con lujo y puntualidad, con chofer privado desde y hacia el aeropuerto.",
+        commentTitle: "💬 Déjanos tu comentario",
+        commentBtn: "Enviar por WhatsApp",
+        contactTitle: "📞 Contáctanos",
+        contactBtn: "💬 Escribir por WhatsApp",
+        footer: "© 2025 Marcos Rent Car | Punta Cana, República Dominicana"
       },
-      Inglés: {
-        titulo: "💬 Leave your comment",
-        nombre: "Your name",
-        correo: "Your email address",
-        comentario: "Write your comment...",
-        boton: "Send via WhatsApp"
+      en: {
+        subtitle: "Drive the Future of Tourism in Punta Cana",
+        heroText: "Explore in Style, Drive with Freedom",
+        whatsapp: "💬 Book via WhatsApp",
+        services: "Premium Services",
+        service1Title: "Car Rental",
+        service1Text: "Sports cars, family vehicles and modern SUVs, perfect for any trip.",
+        service2Title: "VIP Transport",
+        service2Text: "Travel in luxury and on time, with a private driver to and from the airport.",
+        commentTitle: "💬 Leave us your comment",
+        commentBtn: "Send via WhatsApp",
+        contactTitle: "📞 Contact Us",
+        contactBtn: "💬 Message on WhatsApp",
+        footer: "© 2025 Marcos Rent Car | Punta Cana, Dominican Republic"
       },
-      Ruso: {
-        titulo: "💬 Оставьте свой комментарий",
-        nombre: "Ваше имя",
-        correo: "Ваш адрес электронной почты",
-        comentario: "Напишите свой комментарий...",
-        boton: "Отправить через WhatsApp"
+      fr: {
+        subtitle: "Conduisez le futur du tourisme à Punta Cana",
+        heroText: "Explorez avec style, conduisez en liberté",
+        whatsapp: "💬 Réservez sur WhatsApp",
+        services: "Services Premium",
+        service1Title: "Location de Voitures",
+        service1Text: "Voitures de sport, familiales et SUV modernes, parfaites pour tout voyage.",
+        service2Title: "Transport VIP",
+        service2Text: "Voyagez avec luxe et ponctualité, avec chauffeur privé depuis et vers l'aéroport.",
+        commentTitle: "💬 Laissez-nous votre commentaire",
+        commentBtn: "Envoyer via WhatsApp",
+        contactTitle: "📞 Contactez-nous",
+        contactBtn: "💬 Écrire sur WhatsApp",
+        footer: "© 2025 Marcos Rent Car | Punta Cana, République Dominicaine"
       },
-      Francés: {
-        titulo: "💬 Laissez votre commentaire",
-        nombre: "Votre nom",
-        correo: "Votre adresse e-mail",
-        comentario: "Écrivez votre commentaire...",
-        boton: "Envoyer via WhatsApp"
+      it: {
+        subtitle: "Guida il futuro del turismo a Punta Cana",
+        heroText: "Esplora con stile, guida in libertà",
+        whatsapp: "💬 Prenota su WhatsApp",
+        services: "Servizi Premium",
+        service1Title: "Noleggio Auto",
+        service1Text: "Auto sportive, familiari e SUV moderni, perfetti per ogni viaggio.",
+        service2Title: "Trasporto VIP",
+        service2Text: "Viaggia con lusso e puntualità, con autista privato da e per l'aeroporto.",
+        commentTitle: "💬 Lasciaci un commento",
+        commentBtn: "Invia tramite WhatsApp",
+        contactTitle: "📞 Contattaci",
+        contactBtn: "💬 Scrivi su WhatsApp",
+        footer: "© 2025 Marcos Rent Car | Punta Cana, Repubblica Dominicana"
       },
-      Italiano: {
-        titulo: "💬 Lascia il tuo commento",
-        nombre: "Il tuo nome",
-        correo: "La tua email",
-        comentario: "Scrivi il tuo commento...",
-        boton: "Invia tramite WhatsApp"
+      ru: {
+        subtitle: "Ведите будущее туризма в Пунта-Кане",
+        heroText: "Исследуйте со стилем, водите свободно",
+        whatsapp: "💬 Забронировать через WhatsApp",
+        services: "Премиум услуги",
+        service1Title: "Аренда автомобилей",
+        service1Text: "Спортивные, семейные и современные внедорожники для любых поездок.",
+        service2Title: "VIP транспорт",
+        service2Text: "Путешествуйте с комфортом и вовремя, с личным водителем в аэропорт и обратно.",
+        commentTitle: "💬 Оставьте свой комментарий",
+        commentBtn: "Отправить через WhatsApp",
+        contactTitle: "📞 Свяжитесь с нами",
+        contactBtn: "💬 Написать в WhatsApp",
+        footer: "© 2025 Marcos Rent Car | Пунта-Кана, Доминиканская Республика"
       },
-      Portugués: {
-        titulo: "💬 Deixe seu comentário",
-        nombre: "Seu nome",
-        correo: "Seu e-mail",
-        comentario: "Escreva seu comentário...",
-        boton: "Enviar pelo WhatsApp"
+      pt: {
+        subtitle: "Conduza o futuro do turismo em Punta Cana",
+        heroText: "Explore com estilo, dirija com liberdade",
+        whatsapp: "💬 Reservar pelo WhatsApp",
+        services: "Serviços Premium",
+        service1Title: "Aluguel de Carros",
+        service1Text: "Carros esportivos, familiares e SUVs modernos, perfeitos para qualquer viagem.",
+        service2Title: "Transporte VIP",
+        service2Text: "Viaje com luxo e pontualidade, com motorista particular de e para o aeroporto.",
+        commentTitle: "💬 Deixe seu comentário",
+        commentBtn: "Enviar pelo WhatsApp",
+        contactTitle: "📞 Contate-nos",
+        contactBtn: "💬 Enviar no WhatsApp",
+        footer: "© 2025 Marcos Rent Car | Punta Cana, República Dominicana"
       }
     };
 
-    function cambiarIdioma() {
-      const idioma = document.getElementById("idioma").value;
-      if (textos[idioma]) {
-        document.getElementById("titulo-form").textContent = textos[idioma].titulo;
-        document.getElementById("nombre").placeholder = textos[idioma].nombre;
-        document.getElementById("correo").placeholder = textos[idioma].correo;
-        document.getElementById("comentario").placeholder = textos[idioma].comentario;
-        document.getElementById("btnEnviar").textContent = textos[idioma].boton;
-      }
-    }
+    const ids = [
+      "subtitle", "heroText", "whatsapp", "servicesTitle",
+      "service1Title", "service1Text", "service2Title", "service2Text",
+      "commentTitle", "commentBtn", "contactTitle", "contactBtn", "footer"
+    ];
 
-    function enviarWhatsApp() {
-      const nombre = document.getElementById("nombre").value.trim();
-      const correo = document.getElementById("correo").value.trim();
-      const comentario = document.getElementById("comentario").value.trim();
-      const idioma = document.getElementById("idioma").value;
+    const langSelect = document.getElementById("languageSelect");
 
-      if (!nombre || !correo || !comentario || !idioma) {
-        alert("Por favor completa todos los campos antes de enviar. ❗");
-        return;
-      }
+    langSelect.addEventListener("change", () => {
+      const lang = langSelect.value;
+      const t = translations[lang];
 
-      const mensaje = `Hola! 👋%0AComentario desde el sitio:%0A%0A*Nombre:* ${nombre}%0A*Correo:* ${correo}%0A*Comentario:* ${comentario}%0A*Idioma:* ${idioma}`;
-      const numero = "18294909544";
-      const url = `https://wa.me/${numero}?text=${mensaje}`;
-      window.open(url, "_blank");
-    }
+      document.getElementById("subtitle").textContent = t.subtitle;
+      document.getElementById("heroText").textContent = t.heroText;
+      document.getElementById("whatsappBtn").textContent = t.whatsapp;
+      document.getElementById("servicesTitle").textContent = t.services;
+      document.getElementById("service1Title").textContent = t.service1Title;
+      document.getElementById("service1Text").textContent = t.service1Text;
+      document.getElementById("service2Title").textContent = t.service2Title;
+      document.getElementById("service2Text").textContent = t.service2Text;
+      document.getElementById("commentTitle").textContent = t.commentTitle;
+      document.getElementById("commentBtn").textContent = t.commentBtn;
+      document.getElementById("contactTitle").textContent = t.contactTitle;
+      document.getElementById("contactBtn").textContent = t.contactBtn;
+      document.getElementById("footerText").textContent = t.footer;
+    });
   </script>
 </body>
 </html>
