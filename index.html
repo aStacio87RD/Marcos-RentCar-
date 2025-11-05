@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marcos Rent Car - Punta Cana</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0a0a0f;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(90deg, #001F3F, #0074D9, #39CCCC);
+      text-align: center;
+      padding: 2.5rem 1rem;
+      animation: glow 4s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { box-shadow: 0 0 10px #39CCCC; }
+      to { box-shadow: 0 0 25px #0074D9; }
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      letter-spacing: 2px;
+      animation: floatText 5s infinite alternate ease-in-out;
+    }
+
+    @keyframes floatText {
+      from { transform: translateY(0); }
+      to { transform: translateY(-5px); }
+    }
+
+    /* SLIDER INFINITO */
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 75vh;
+      overflow: hidden;
+    }
+
+    .slides {
+      display: flex;
+      width: calc(200%);
+      height: 100%;
+      animation: scrollInfinite 40s linear infinite;
+    }
+
+    .slides img {
+      width: 100vw;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7);
+      flex-shrink: 0;
+      transition: transform 5s ease;
+    }
+
+    @keyframes scrollInfinite {
+      from { transform: translateX(0); }
+      to { transform: translateX(-100%); }
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .hero-text h2 {
+      font-size: 3rem;
+      background: linear-gradient(90deg, #00e6ff, #00ff99);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 20px rgba(0,0,0,0.8);
+    }
+
+    section {
+      padding: 3rem 1rem;
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(90deg, #00ccff, #00ff99);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* FORMULARIO */
+    .comment-box {
+      background: rgba(255,255,255,0.05);
+      padding: 2rem;
+      border-radius: 15px;
+      max-width: 600px;
+      margin: 3rem auto;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 0 15px rgba(0,255,153,0.2);
+    }
+
+    .comment-box input,
+    .comment-box textarea,
+    .comment-box select {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.8rem 0;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    .comment-box button {
+      background: linear-gradient(90deg, #25D366, #00ff99);
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .comment-box button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0,255,153,0.8);
+    }
+
+    footer {
+      text-align: center;
+      background: #000814;
+      color: #aaa;
+      padding: 1rem;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(90deg, #25D366, #00ff99);
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 0 15px rgba(0,255,153,0.5);
+      transition: 0.3s;
+      z-index: 100;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(0,255,153,0.9);
+    }
+
+    @media (max-width: 768px) {
+      .hero-text h2 { font-size: 2rem; }
+      header h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚗 Marcos Rent Car</h1>
+    <p>Conduce el Futuro del Turismo en Punta Cana</p>
+  </header>
+
+  <div class="slider">
+    <div class="slides">
+      <img src="https://media.gq.com.mx/photos/65eb81c6e4788bcc1e703bcd/16:9/w_2560%2Cc_limit/Autos_deportivos_de_equipos_de_la_Fo%25CC%2581rmula_1.jpg">
+      <img src="https://media.ed.edmunds-media.com/honda/cr-v/2026/oem/2026_honda_cr-v_4dr-suv_trailsport-hybrid_fq_oem_1_1600.jpg">
+      <img src="https://cdn.milenio.com/uploads/media/2019/08/02/medida-involucra-minivans-fabricaron-agosto_7_0_1607_1000.jpeg">
+      <img src="https://media.revistagq.com/photos/5ca5f45abfc0eb2b9f1c814d/4:3/w_1200,h_900,c_limit/rubicon_7387.png">
+      <!-- duplicación -->
+      <img src="https://media.gq.com.mx/photos/65eb81c6e4788bcc1e703bcd/16:9/w_2560%2Cc_limit/Autos_deportivos_de_equipos_de_la_Fo%25CC%2581rmula_1.jpg">
+      <img src="https://media.ed.edmunds-media.com/honda/cr-v/2026/oem/2026_honda-cr-v_4dr-suv_trailsport-hybrid_fq_oem_1_1600.jpg">
+      <img src="https://cdn.milenio.com/uploads/media/2019/08/02/medida-involucra-minivans-fabricaron-agosto_7_0_1607_1000.jpeg">
+      <img src="https://media.revistagq.com/photos/5ca5f45abfc0eb2b9f1c814d/4:3/w_1200,h_900,c_limit/rubicon_7387.png">
+    </div>
+    <div class="hero-text">
+      <h2>Explora con Estilo, Conduce con Libertad</h2>
+    </div>
+  </div>
+
+  <section id="comentarios">
+    <h2 id="titulo-form">💬 Déjanos tu comentario</h2>
+    <div class="comment-box">
+      <input type="text" id="nombre" placeholder="Tu nombre" required>
+      <input type="email" id="correo" placeholder="Tu correo electrónico" required>
+      <textarea id="comentario" rows="4" placeholder="Escribe tu comentario..." required></textarea>
+      
+      <select id="idioma" required onchange="cambiarIdioma()">
+        <option value="">🌐 Selecciona tu idioma</option>
+        <option value="Español">🇪🇸 Español</option>
+        <option value="Inglés">🇬🇧 English</option>
+        <option value="Ruso">🇷🇺 Русский</option>
+        <option value="Francés">🇫🇷 Français</option>
+        <option value="Italiano">🇮🇹 Italiano</option>
+        <option value="Portugués">🇵🇹 Português</option>
+      </select>
+
+      <button id="btnEnviar" onclick="enviarWhatsApp()">Enviar por WhatsApp</button>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Marcos Rent Car | Punta Cana, República Dominicana
+  </footer>
+
+  <a href="https://wa.me/18093937692?text=Hola%20Marcos%20Rent%20Car!" class="whatsapp-float" target="_blank">💬</a>
+
+  <script>
+    const textos = {
+      Español: {
+        titulo: "💬 Déjanos tu comentario",
+        nombre: "Tu nombre",
+        correo: "Tu correo electrónico",
+        comentario: "Escribe tu comentario...",
+        boton: "Enviar por WhatsApp"
+      },
+      Inglés: {
+        titulo: "💬 Leave your comment",
+        nombre: "Your name",
+        correo: "Your email address",
+        comentario: "Write your comment...",
+        boton: "Send via WhatsApp"
+      },
+      Ruso: {
+        titulo: "💬 Оставьте свой комментарий",
+        nombre: "Ваше имя",
+        correo: "Ваш адрес электронной почты",
+        comentario: "Напишите свой комментарий...",
+        boton: "Отправить через WhatsApp"
+      },
+      Francés: {
+        titulo: "💬 Laissez votre commentaire",
+        nombre: "Votre nom",
+        correo: "Votre adresse e-mail",
+        comentario: "Écrivez votre commentaire...",
+        boton: "Envoyer via WhatsApp"
+      },
+      Italiano: {
+        titulo: "💬 Lascia il tuo commento",
+        nombre: "Il tuo nome",
+        correo: "La tua email",
+        comentario: "Scrivi il tuo commento...",
+        boton: "Invia tramite WhatsApp"
+      },
+      Portugués: {
+        titulo: "💬 Deixe seu comentário",
+        nombre: "Seu nome",
+        correo: "Seu e-mail",
+        comentario: "Escreva seu comentário...",
+        boton: "Enviar pelo WhatsApp"
+      }
+    };
+
+    function cambiarIdioma() {
+      const idioma = document.getElementById("idioma").value;
+      if (textos[idioma]) {
+        document.getElementById("titulo-form").textContent = textos[idioma].titulo;
+        document.getElementById("nombre").placeholder = textos[idioma].nombre;
+        document.getElementById("correo").placeholder = textos[idioma].correo;
+        document.getElementById("comentario").placeholder = textos[idioma].comentario;
+        document.getElementById("btnEnviar").textContent = textos[idioma].boton;
+      }
+    }
+
+    function enviarWhatsApp() {
+      const nombre = document.getElementById("nombre").value.trim();
+      const correo = document.getElementById("correo").value.trim();
+      const comentario = document.getElementById("comentario").value.trim();
+      const idioma = document.getElementById("idioma").value;
+
+      if (!nombre || !correo || !comentario || !idioma) {
+        alert("Por favor completa todos los campos antes de enviar. ❗");
+        return;
+      }
+
+      const mensaje = `Hola! 👋%0AComentario desde el sitio:%0A%0A*Nombre:* ${nombre}%0A*Correo:* ${correo}%0A*Comentario:* ${comentario}%0A*Idioma:* ${idioma}`;
+      const numero = "18294909544";
+      const url = `https://wa.me/${numero}?text=${mensaje}`;
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>
