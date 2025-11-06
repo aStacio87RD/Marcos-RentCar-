@@ -74,7 +74,7 @@
     .slider {
       position: relative;
       width: 100%;
-      height: 75vh;
+      height: 60vh;
       overflow: hidden;
     }
 
@@ -113,7 +113,7 @@
     }
 
     .hero-text h2 {
-      font-size: 3rem;
+      font-size: 2.4rem;
       text-shadow: 0 0 20px rgba(0,0,0,0.8);
       background: linear-gradient(90deg, #00e6ff, #00ff99);
       -webkit-background-clip: text;
@@ -128,7 +128,7 @@
 
     .hero-text a {
       display: inline-block;
-      margin-top: 1.5rem;
+      margin-top: 1rem;
       background: linear-gradient(90deg, #25D366, #00ff99);
       color: white;
       padding: 0.9rem 2.2rem;
@@ -137,11 +137,6 @@
       font-weight: 600;
       box-shadow: 0 0 15px rgba(0,255,153,0.6);
       transition: all 0.3s ease;
-    }
-
-    .hero-text a:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 25px rgba(0,255,153,0.9);
     }
 
     section {
@@ -194,14 +189,15 @@
       background: rgba(255,255,255,0.05);
       padding: 2rem;
       border-radius: 15px;
-      max-width: 600px;
-      margin: 3rem auto;
+      max-width: 700px;
+      margin: 2.5rem auto;
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
     .comment-box input, .comment-box textarea {
       width: 100%;
       padding: 0.8rem;
-      margin: 0.8rem 0;
+      margin: 0.6rem 0;
       border-radius: 8px;
       border: none;
       outline: none;
@@ -250,6 +246,12 @@
       cursor: pointer;
       z-index: 100;
     }
+
+    @media (max-width: 768px) {
+      .hero-text h2 { font-size: 1.6rem; }
+      header h1 { font-size: 1.6rem; }
+      .slider { height: 45vh; }
+    }
   </style>
 </head>
 <body>
@@ -263,20 +265,27 @@
         <option value="ru">🇷🇺 Русский</option>
       </select>
     </div>
+
     <h1 id="t1">🚗 Marcos Rent Car</h1>
     <p id="t2">Conduce el Futuro del Turismo en Punta Cana</p>
   </header>
 
   <div class="slider">
     <div class="slides">
-      <img src="https://media.gq.com.mx/photos/65eb81c6e4788bcc1e703bcd/16:9/w_2560,c_limit/Autos_deportivos_de_equipos_de_la_Fórmula_1.jpg" alt="Auto">
+      <img src="https://media.gq.com.mx/photos/65eb81c6e4788bcc1e703bcd/16:9/w_2560%2Cc_limit/Autos_deportivos_de_equipos_de_la_Fo%25CC%2581rmula_1.jpg" alt="Auto Deportivo">
+      <img src="https://media.ed.edmunds-media.com/honda/cr-v/2026/oem/2026_honda_cr-v_4dr-suv_trailsport-hybrid_fq_oem_1_1600.jpg" alt="SUV">
+      <img src="https://cdn.milenio.com/uploads/media/2019/08/02/medida-involucra-minivans-fabricaron-agosto_7_0_1607_1000.jpeg" alt="Familiar">
+      <img src="https://media.revistagq.com/photos/5ca5f45abfc0eb2b9f1c814d/4:3/w_1200,h_900,c_limit/rubicon_7387.png" alt="Jeep 4x4">
+      <!-- repetimos para efecto infinito -->
+      <img src="https://media.gq.com.mx/photos/65eb81c6e4788bcc1e703bcd/16:9/w_2560%2Cc_limit/Autos_deportivos_de_equipos_de_la_Fo%25CC%2581rmula_1.jpg" alt="Auto Deportivo">
       <img src="https://media.ed.edmunds-media.com/honda/cr-v/2026/oem/2026_honda_cr-v_4dr-suv_trailsport-hybrid_fq_oem_1_1600.jpg" alt="SUV">
       <img src="https://cdn.milenio.com/uploads/media/2019/08/02/medida-involucra-minivans-fabricaron-agosto_7_0_1607_1000.jpeg" alt="Familiar">
       <img src="https://media.revistagq.com/photos/5ca5f45abfc0eb2b9f1c814d/4:3/w_1200,h_900,c_limit/rubicon_7387.png" alt="Jeep 4x4">
     </div>
+
     <div class="hero-text">
       <h2 id="t3">Explora con Estilo, Conduce con Libertad</h2>
-      <a id="t4" href="https://wa.me/18094078708?text=Hola%20Marcos%20Rent%20Car!">💬 Reserva por WhatsApp</a>
+      <a id="t4" class="whats-cta" href="https://wa.me/18094078708?text=Hola%20Marcos%20Rent%20Car!" target="_blank">💬 Reserva por WhatsApp</a>
     </div>
   </div>
 
@@ -288,68 +297,206 @@
         <h3 id="t6">Renta de Autos</h3>
         <p id="t7">Autos deportivos, familiares y SUV modernos, perfectos para cualquier viaje.</p>
       </div>
+
       <div class="service">
-        <img src="https://inpunto.la/wp-content/uploads/2021/04/Traslado-corporativo_como-elegir-el-mejor-servicio.jpg" alt="VIP">
+        <img src="https://inpunto.la/wp-content/uploads/2021/04/Traslado-corporativo_como-elegir-el-mejor-servicio.jpg" alt="Transporte VIP">
         <h3 id="t8">Transporte VIP</h3>
         <p id="t9">Viaja con lujo y puntualidad, con chofer privado desde y hacia el aeropuerto.</p>
+      </div>
+
+      <div class="service">
+        <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/12/64/a1/f1.jpg" alt="Excursiones">
+        <h3 id="t10">Excursiones</h3>
+        <p id="t11">Excursiones guiadas a playas, ríos y montañas — experiencias auténticas y seguras.</p>
+      </div>
+
+      <div class="service">
+        <img src="https://cdn.tourcms.com/a/13222/721/1/large.png" alt="Yates">
+        <h3 id="t12">Renta de Yates</h3>
+        <p id="t13">Alquila yates para celebraciones privadas, paseos al atardecer y eventos especiales.</p>
       </div>
     </div>
   </section>
 
-  <section class="contact">
-    <h2 id="t10">📞 Contáctanos</h2>
-    <p id="t11">WhatsApp: <strong>+1 (809) 393-7692</strong></p>
-    <p id="t12">Email: <strong>marcobastardo958@gmail.com</strong></p>
-    <a id="t13" href="https://wa.me/18093937692" target="_blank">💬 Escribir por WhatsApp</a>
+  <section id="comentarios">
+    <h2>💬 Déjanos tu comentario</h2>
+    <div class="comment-box">
+      <input type="text" id="nombre" placeholder="Tu nombre" required>
+      <input type="email" id="correo" placeholder="Tu correo electrónico" required>
+      <textarea id="comentario" rows="4" placeholder="Escribe tu comentario..." required></textarea>
+      <button onclick="enviarWhatsApp()">Enviar por WhatsApp</button>
+    </div>
   </section>
 
-  <a href="https://wa.me/18093937692" class="whatsapp-float">💬</a>
+  <section class="contact">
+    <h2 id="t14">📞 Contáctanos</h2>
+    <p id="t15">WhatsApp: <strong>+1 (809) 393-7692</strong></p>
+    <p id="t16">Email: <strong>marcobastardo958@gmail.com</strong></p>
+    <a id="t17" class="whats-cta" href="https://wa.me/18093937692" target="_blank">💬 Escribir por WhatsApp</a>
+  </section>
 
-  <footer id="t14">© 2025 Marcos Rent Car | Punta Cana, República Dominicana</footer>
+  <a href="https://wa.me/18093937692" class="whatsapp-float" target="_blank">💬</a>
+
+  <footer id="t18">© 2025 Marcos Rent Car | Punta Cana, República Dominicana</footer>
 
   <script>
+    // Traducciones: 18 entradas (t1..t18)
     const texts = {
-      es: ["🚗 Marcos Rent Car","Conduce el Futuro del Turismo en Punta Cana",
-      "Explora con Estilo, Conduce con Libertad","💬 Reserva por WhatsApp","Servicios Premium",
-      "Renta de Autos","Autos deportivos, familiares y SUV modernos, perfectos para cualquier viaje.",
-      "Transporte VIP","Viaja con lujo y puntualidad, con chofer privado desde y hacia el aeropuerto.",
-      "📞 Contáctanos","WhatsApp:","Email:","💬 Escribir por WhatsApp",
-      "© 2025 Marcos Rent Car | Punta Cana, República Dominicana"],
+      es: [
+        "🚗 Marcos Rent Car", // t1
+        "Conduce el Futuro del Turismo en Punta Cana", // t2
+        "Explora con Estilo, Conduce con Libertad", // t3
+        "💬 Reserva por WhatsApp", // t4
+        "Servicios Premium", // t5
+        "Renta de Autos", // t6
+        "Autos deportivos, familiares y SUV modernos, perfectos para cualquier viaje.", // t7
+        "Transporte VIP", // t8
+        "Viaja con lujo y puntualidad, con chofer privado desde y hacia el aeropuerto.", // t9
+        "Excursiones", // t10
+        "Excursiones guiadas a playas, ríos y montañas — experiencias auténticas y seguras.", // t11
+        "Renta de Yates", // t12
+        "Alquila yates para celebraciones privadas, paseos al atardecer y eventos especiales.", // t13
+        "📞 Contáctanos", // t14
+        "WhatsApp:", // t15
+        "Email:", // t16
+        "💬 Escribir por WhatsApp", // t17
+        "© 2025 Marcos Rent Car | Punta Cana, República Dominicana" // t18
+      ],
 
-      en: ["🚗 Marcos Rent Car","Drive the Future of Tourism in Punta Cana",
-      "Explore in Style, Drive with Freedom","💬 Book via WhatsApp","Premium Services",
-      "Car Rentals","Sports cars, family cars, and modern SUVs — perfect for any trip.",
-      "VIP Transport","Travel with luxury and punctuality with a private driver to and from the airport.",
-      "📞 Contact Us","WhatsApp:","Email:","💬 Message on WhatsApp",
-      "© 2025 Marcos Rent Car | Punta Cana, Dominican Republic"],
+      en: [
+        "🚗 Marcos Rent Car",
+        "Drive the Future of Tourism in Punta Cana",
+        "Explore in Style, Drive with Freedom",
+        "💬 Book via WhatsApp",
+        "Premium Services",
+        "Car Rentals",
+        "Sports cars, family cars and modern SUVs — perfect for any trip.",
+        "VIP Transport",
+        "Travel with luxury and punctuality with a private driver to and from the airport.",
+        "Excursions",
+        "Guided excursions to beaches, rivers and mountains — authentic and safe experiences.",
+        "Yacht Rental",
+        "Rent yachts for private celebrations, sunset cruises and special events.",
+        "📞 Contact Us",
+        "WhatsApp:",
+        "Email:",
+        "💬 Message on WhatsApp",
+        "© 2025 Marcos Rent Car | Punta Cana, Dominican Republic"
+      ],
 
-      pt: ["🚗 Marcos Rent Car","Dirija o Futuro do Turismo em Punta Cana",
-      "Explore com Estilo, Dirija com Liberdade","💬 Reserve pelo WhatsApp","Serviços Premium",
-      "Aluguel de Carros","Carros esportivos, familiares e SUVs modernos, perfeitos para qualquer viagem.",
-      "Transporte VIP","Viaje com luxo e pontualidade, com motorista particular.",
-      "📞 Contate-nos","WhatsApp:","Email:","💬 Enviar pelo WhatsApp",
-      "© 2025 Marcos Rent Car | Punta Cana, República Dominicana"],
+      pt: [
+        "🚗 Marcos Rent Car",
+        "Dirija o Futuro do Turismo em Punta Cana",
+        "Explore com Estilo, Dirija com Liberdade",
+        "💬 Reserve pelo WhatsApp",
+        "Serviços Premium",
+        "Aluguel de Carros",
+        "Carros esportivos, familiares e SUVs modernos, perfeitos para qualquer viagem.",
+        "Transporte VIP",
+        "Viaje com luxo e pontualidade, com motorista particular de ida e volta ao aeroporto.",
+        "Excursões",
+        "Excursões guiadas a praias, rios e montanhas — experiências autênticas e seguras.",
+        "Aluguel de Iates",
+        "Alugue iates para celebrações privadas, passeios ao pôr do sol e eventos especiais.",
+        "📞 Contate-nos",
+        "WhatsApp:",
+        "Email:",
+        "💬 Enviar pelo WhatsApp",
+        "© 2025 Marcos Rent Car | Punta Cana, República Dominicana"
+      ],
 
-      it: ["🚗 Marcos Rent Car","Guida il Futuro del Turismo a Punta Cana",
-      "Esplora con Stile, Guida con Libertà","💬 Prenota su WhatsApp","Servizi Premium",
-      "Noleggio Auto","Auto sportive, familiari e SUV moderni, perfetti per ogni viaggio.",
-      "Trasporto VIP","Viaggia con lusso e puntualità, con autista privato.",
-      "📞 Contattaci","WhatsApp:","Email:","💬 Scrivi su WhatsApp",
-      "© 2025 Marcos Rent Car | Punta Cana, Repubblica Dominicana"],
+      it: [
+        "🚗 Marcos Rent Car",
+        "Guida il Futuro del Turismo a Punta Cana",
+        "Esplora con Stile, Guida con Libertà",
+        "💬 Prenota su WhatsApp",
+        "Servizi Premium",
+        "Noleggio Auto",
+        "Auto sportive, familiari e SUV moderni, perfetti per ogni viaggio.",
+        "Trasporto VIP",
+        "Viaggia con lusso e puntualità con autista privato da e verso l'aeroporto.",
+        "Escursioni",
+        "Escursioni guidate a spiagge, fiumi e montagne — esperienze autentiche e sicure.",
+        "Noleggio Yacht",
+        "Noleggia yacht per celebrazioni private, tramonti e eventi speciali.",
+        "📞 Contattaci",
+        "WhatsApp:",
+        "Email:",
+        "💬 Scrivi su WhatsApp",
+        "© 2025 Marcos Rent Car | Punta Cana, Repubblica Dominicana"
+      ],
 
-      ru: ["🚗 Marcos Rent Car","Веди будущее туризма в Пунта-Кане",
-      "Исследуй со стилем, води со свободой","💬 Забронировать в WhatsApp","Премиум Услуги",
-      "Аренда Авто","Современные спортивные, семейные и внедорожные автомобили.",
-      "VIP Транспорт","Путешествуй с роскошью и пунктуальностью с личным водителем.",
-      "📞 Свяжитесь с нами","WhatsApp:","Email:","💬 Написать в WhatsApp",
-      "© 2025 Marcos Rent Car | Пунта-Кана, Доминиканская Республика"]
+      ru: [
+        "🚗 Marcos Rent Car",
+        "Веди будущее туризма в Пунта-Кане",
+        "Исследуй со стилем, води со свободой",
+        "💬 Забронировать в WhatsApp",
+        "Премиум Услуги",
+        "Аренда Авто",
+        "Спортивные, семейные и современные внедорожники — идеально для любой поездки.",
+        "VIP Транспорт",
+        "Путешествуйте с роскошью и пунктуальностью с личным водителем до и из аэропорта.",
+        "Экскурсии",
+        "Экскурсии к пляжам, рекам и горам — безопасные и аутентичные впечатления.",
+        "Аренда Яхт",
+        "Арендуйте яхты для частных праздников, закатных прогулок и специальных событий.",
+        "📞 Свяжитесь с нами",
+        "WhatsApp:",
+        "Email:",
+        "💬 Написать в WhatsApp",
+        "© 2025 Marcos Rent Car | Пунта-Кана, Доминиканская Республика"
+      ]
     };
 
     function changeLang(lang) {
-      for (let i = 1; i <= 14; i++) {
-        document.getElementById("t" + i).innerHTML = texts[lang][i - 1];
+      // actualizar t1..t18
+      for (let i = 1; i <= 18; i++) {
+        const el = document.getElementById("t" + i);
+        if (el && texts[lang] && texts[lang][i - 1] !== undefined) {
+          el.innerHTML = texts[lang][i - 1];
+        }
       }
+
+      // también actualizamos atributos 'href' de los botones de WhatsApp para incluir mensajes localizados cortos
+      const whatsButtons = document.querySelectorAll('.whats-cta');
+      let msg = "";
+      switch (lang) {
+        case 'en': msg = "Hello Marcos Rent Car!"; break;
+        case 'pt': msg = "Olá Marcos Rent Car!"; break;
+        case 'it': msg = "Ciao Marcos Rent Car!"; break;
+        case 'ru': msg = "Здравствуйте Marcos Rent Car!"; break;
+        default: msg = "Hola Marcos Rent Car!";
+      }
+      whatsButtons.forEach(btn => {
+        // número por defecto (usa tu número preferido)
+        const number = btn.href.includes("18093937692") ? "18093937692" : "18094078708";
+        btn.href = `https://wa.me/${number}?text=${encodeURIComponent(msg)}`;
+      });
     }
+
+    // función de envío del formulario por WhatsApp (usa número fijo)
+    function enviarWhatsApp() {
+      const nombre = document.getElementById("nombre").value.trim();
+      const correo = document.getElementById("correo").value.trim();
+      const comentario = document.getElementById("comentario").value.trim();
+
+      if (!nombre || !correo || !comentario) {
+        alert("Por favor completa todos los campos antes de enviar. ❗");
+        return;
+      }
+
+      const mensaje = `Hola! 👋%0AQuiero dejar un comentario:%0A%0A*Nombre:* ${nombre}%0A*Correo:* ${correo}%0A*Comentario:* ${comentario}`;
+      const numero = "18294909544";
+      const url = `https://wa.me/${numero}?text=${mensaje}`;
+      window.open(url, "_blank");
+    }
+
+    // establecer idioma por defecto al cargar
+    document.addEventListener('DOMContentLoaded', () => {
+      const sel = document.getElementById('lang');
+      const initial = sel.value || 'es';
+      changeLang(initial);
+    });
   </script>
 </body>
 </html>
