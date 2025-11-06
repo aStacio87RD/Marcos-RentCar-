@@ -126,7 +126,7 @@
   </header>
 
   <div class="container">
-    <h2 id="commentsTitle">Caja de Comentarios</h2>
+    <h2 id="commentsTitle">Déjanos tu comentario</h2>
     <form id="contactForm">
       <label id="labelName" for="name">Nombre</label>
       <input type="text" id="name" name="name" placeholder="Tu nombre" required>
@@ -146,81 +146,114 @@
   </footer>
 
   <script>
-    // Traducciones
+    // Traducciones completas
     const translations = {
       es: {
         title: "Marcos Rent Car - Punta Cana",
-        commentsTitle: "Caja de Comentarios",
+        commentsTitle: "Déjanos tu comentario",
         labelName: "Nombre",
         labelEmail: "Correo Electrónico",
         labelMessage: "Mensaje",
+        placeholderName: "Tu nombre",
+        placeholderEmail: "Tu correo",
+        placeholderMessage: "Escribe tu comentario",
         submitBtn: "Enviar por WhatsApp"
       },
       en: {
         title: "Marcos Rent Car - Punta Cana",
-        commentsTitle: "Comment Box",
+        commentsTitle: "Leave Us Your Comment",
         labelName: "Name",
         labelEmail: "Email",
         labelMessage: "Message",
+        placeholderName: "Your name",
+        placeholderEmail: "Your email",
+        placeholderMessage: "Write your comment",
         submitBtn: "Send via WhatsApp"
       },
       fr: {
         title: "Marcos Rent Car - Punta Cana",
-        commentsTitle: "Boîte de Commentaires",
+        commentsTitle: "Laissez-nous votre commentaire",
         labelName: "Nom",
         labelEmail: "E-mail",
         labelMessage: "Message",
+        placeholderName: "Votre nom",
+        placeholderEmail: "Votre e-mail",
+        placeholderMessage: "Écrivez votre commentaire",
         submitBtn: "Envoyer via WhatsApp"
       },
       it: {
         title: "Marcos Rent Car - Punta Cana",
-        commentsTitle: "Casella dei Commenti",
+        commentsTitle: "Lasciaci un commento",
         labelName: "Nome",
         labelEmail: "Email",
         labelMessage: "Messaggio",
+        placeholderName: "Il tuo nome",
+        placeholderEmail: "La tua email",
+        placeholderMessage: "Scrivi il tuo commento",
         submitBtn: "Invia su WhatsApp"
       },
       ru: {
         title: "Marcos Rent Car - Пунта-Кана",
-        commentsTitle: "Окно комментариев",
+        commentsTitle: "Оставьте свой комментарий",
         labelName: "Имя",
         labelEmail: "Электронная почта",
         labelMessage: "Сообщение",
+        placeholderName: "Ваше имя",
+        placeholderEmail: "Ваш email",
+        placeholderMessage: "Напишите свой комментарий",
         submitBtn: "Отправить через WhatsApp"
       },
       pt: {
         title: "Marcos Rent Car - Punta Cana",
-        commentsTitle: "Caixa de Comentários",
+        commentsTitle: "Deixe seu comentário",
         labelName: "Nome",
         labelEmail: "E-mail",
         labelMessage: "Mensagem",
+        placeholderName: "Seu nome",
+        placeholderEmail: "Seu e-mail",
+        placeholderMessage: "Escreva seu comentário",
         submitBtn: "Enviar via WhatsApp"
       }
     };
 
-    const langSelector = document.getElementById("language");
-    const year = new Date().getFullYear();
-    document.getElementById("year").textContent = year;
+    // Mostrar año actual
+    document.getElementById("year").textContent = new Date().getFullYear();
 
+    const langSelector = document.getElementById("language");
+    const elements = {
+      title: document.getElementById("title"),
+      commentsTitle: document.getElementById("commentsTitle"),
+      labelName: document.getElementById("labelName"),
+      labelEmail: document.getElementById("labelEmail"),
+      labelMessage: document.getElementById("labelMessage"),
+      name: document.getElementById("name"),
+      email: document.getElementById("email"),
+      message: document.getElementById("message"),
+      submitBtn: document.getElementById("submitBtn")
+    };
+
+    // Función de cambio de idioma
     langSelector.addEventListener("change", () => {
       const lang = langSelector.value;
-      document.getElementById("title").textContent = translations[lang].title;
-      document.getElementById("commentsTitle").textContent = translations[lang].commentsTitle;
-      document.getElementById("labelName").textContent = translations[lang].labelName;
-      document.getElementById("labelEmail").textContent = translations[lang].labelEmail;
-      document.getElementById("labelMessage").textContent = translations[lang].labelMessage;
-      document.getElementById("submitBtn").textContent = translations[lang].submitBtn;
-      document.getElementById("name").placeholder = translations[lang].labelName;
-      document.getElementById("email").placeholder = translations[lang].labelEmail;
-      document.getElementById("message").placeholder = translations[lang].labelMessage;
+      const t = translations[lang];
+
+      elements.title.textContent = t.title;
+      elements.commentsTitle.textContent = t.commentsTitle;
+      elements.labelName.textContent = t.labelName;
+      elements.labelEmail.textContent = t.labelEmail;
+      elements.labelMessage.textContent = t.labelMessage;
+      elements.name.placeholder = t.placeholderName;
+      elements.email.placeholder = t.placeholderEmail;
+      elements.message.placeholder = t.placeholderMessage;
+      elements.submitBtn.textContent = t.submitBtn;
     });
 
-    // Envío a WhatsApp
+    // Envío del formulario a WhatsApp
     document.getElementById("contactForm").addEventListener("submit", function(e) {
       e.preventDefault();
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const message = document.getElementById("message").value.trim();
+      const name = elements.name.value.trim();
+      const email = elements.email.value.trim();
+      const message = elements.message.value.trim();
 
       if (name && email && message) {
         const text = `Nuevo mensaje de *${name}* (%0A📧 ${email})%0A%0A📝 ${message}`;
@@ -234,4 +267,5 @@
   </script>
 </body>
 </html>
+
 
