@@ -47,7 +47,6 @@
       animation: fadeIn 2s ease forwards;
     }
 
-    /* Selector de idioma */
     .lang-selector {
       position: absolute;
       top: 15px;
@@ -225,22 +224,6 @@
       border-top: 5px solid #00ff99;
     }
 
-    .contact a.whats-cta {
-      display: inline-block;
-      margin-top: 1rem;
-      background: linear-gradient(90deg, #25D366, #00ff99);
-      padding: 0.8rem 2rem;
-      border-radius: 50px;
-      color: #fff;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .contact a.whats-cta:hover {
-      transform: scale(1.05);
-    }
-
     footer {
       text-align: center;
       background: #000814;
@@ -291,71 +274,53 @@
     <p id="t2">Conduce el Futuro del Turismo en Punta Cana</p>
   </header>
 
-  <div class="slider">
-    <div class="slides">
-      <img src="https://media.gq.com.mx/photos/65eb81c6e4788bcc1e703bcd/16:9/w_2560%2Cc_limit/Autos_deportivos_de_equipos_de_la_Fo%25CC%2581rmula_1.jpg" alt="Auto Deportivo">
-      <img src="https://media.ed.edmunds-media.com/honda/cr-v/2026/oem/2026_honda_cr-v_4dr-suv_trailsport-hybrid_fq_oem_1_1600.jpg" alt="SUV">
-      <img src="https://cdn.milenio.com/uploads/media/2019/08/02/medida-involucra-minivans-fabricaron-agosto_7_0_1607_1000.jpeg" alt="Familiar">
-      <img src="https://media.revistagq.com/photos/5ca5f45abfc0eb2b9f1c814d/4:3/w_1200,h_900,c_limit/rubicon_7387.png" alt="Jeep 4x4">
-    </div>
-
-    <div class="hero-text">
-      <h2 id="t3">Explora con Estilo, Conduce con Libertad</h2>
-      <a id="t4" class="whats-cta" href="https://wa.me/18093937692?text=Hola%20Marcos%20Rent%20Car!" target="_blank">💬 Reserva por WhatsApp</a>
-    </div>
-  </div>
-
-  <section id="servicios">
-    <h2 id="t5">Servicios Premium</h2>
-    <div class="services">
-      <div class="service">
-        <img src="https://beforeboarding.com/wp-content/uploads/2024/01/39-1024x640.jpg" alt="Rent Car">
-        <h3 id="t6">Renta de Autos</h3>
-        <p id="t7">Autos deportivos, familiares y SUV modernos, perfectos para cualquier viaje.</p>
-      </div>
-
-      <div class="service">
-        <img src="https://inpunto.la/wp-content/uploads/2021/04/Traslado-corporativo_como-elegir-el-mejor-servicio.jpg" alt="Transporte VIP">
-        <h3 id="t8">Transporte VIP</h3>
-        <p id="t9">Viaja con lujo y puntualidad, con chofer privado desde y hacia el aeropuerto.</p>
-      </div>
-
-      <div class="service">
-        <img src="https://cdn.tourcms.com/a/13222/721/1/large.png" alt="Yates">
-        <h3 id="t12">Renta de Yates</h3>
-        <p id="t13">Alquila yates para celebraciones privadas, paseos al atardecer y eventos especiales.</p>
-      </div>
-
-      <div class="service">
-        <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/12/64/a1/f1.jpg" alt="Excursiones">
-        <h3 id="t10">Excursiones</h3>
-        <p id="t11">Excursiones guiadas a playas, ríos y montañas — experiencias auténticas y seguras.</p>
-      </div>
-    </div>
-  </section>
-
+  <!-- FORMULARIO DE COMENTARIOS -->
   <section id="comentarios">
-    <h2>💬 Déjanos tu comentario</h2>
+    <h2 id="comment-title">💬 Déjanos tu comentario</h2>
     <div class="comment-box">
       <input type="text" id="nombre" placeholder="Nombre" required>
-      <input type="email" id="correo" placeholder="Correo electrónico" required>
-      <textarea id="comentario" rows="4" placeholder="Escribe tu comentario aquí..." required></textarea>
-      <button onclick="enviarWhatsApp()">Enviar por WhatsApp</button>
+      <input type="email" id="correo" placeholder="Correo" required>
+      <textarea id="comentario" rows="4" placeholder="Mensaje" required></textarea>
+      <button id="send-btn" onclick="enviarWhatsApp()">Enviar</button>
     </div>
-  </section>
-
-  <section class="contact">
-    <h2 id="t14">📞 Contáctanos</h2>
-    <p id="t15">WhatsApp: <strong>+1 (809) 393-7692</strong></p>
-    <p id="t16">Email: <strong>marcobastardo958@gmail.com</strong></p>
-    <a id="t17" class="whats-cta" href="https://wa.me/18093937692" target="_blank">💬 Escribir por WhatsApp</a>
   </section>
 
   <a href="https://wa.me/18093937692" class="whatsapp-float" target="_blank">💬</a>
 
-  <footer id="t18">© 2025 Marcos Rent Car | Punta Cana, República Dominicana</footer>
+  <footer>© 2025 Marcos Rent Car | Punta Cana, República Dominicana</footer>
 
   <script>
+    const translations = {
+      es: { commentTitle: "💬 Déjanos tu comentario", name: "Nombre", email: "Correo", message: "Mensaje", send: "Enviar" },
+      en: { commentTitle: "💬 Leave us your comment", name: "Name", email: "Email", message: "Message", send: "Send" },
+      pt: { commentTitle: "💬 Deixe seu comentário", name: "Nome", email: "E-mail", message: "Mensagem", send: "Enviar" },
+      it: { commentTitle: "💬 Lasciaci un commento", name: "Nome", email: "Email", message: "Messaggio", send: "Invia" },
+      ru: { commentTitle: "💬 Оставьте свой комментарий", name: "Имя", email: "Эл. почта", message: "Сообщение", send: "Отправить" }
+    };
+
+    function setLang(lang) {
+      const t = translations[lang] || translations['es'];
+      document.getElementById('comment-title').textContent = t.commentTitle;
+      document.getElementById('nombre').placeholder = t.name;
+      document.getElementById('correo').placeholder = t.email;
+      document.getElementById('comentario').placeholder = t.message;
+      document.getElementById('send-btn').textContent = t.send;
+    }
+
+    function changeLang(lang) {
+      localStorage.setItem("selectedLang", lang);
+      setLang(lang);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedLang = localStorage.getItem("selectedLang");
+      const browserLang = navigator.language.substring(0, 2);
+      const supported = ['es', 'en', 'pt', 'it', 'ru'];
+      const lang = savedLang || (supported.includes(browserLang) ? browserLang : 'es');
+      document.getElementById('lang').value = lang;
+      setLang(lang);
+    });
+
     function enviarWhatsApp() {
       const nombre = document.getElementById("nombre").value.trim();
       const correo = document.getElementById("correo").value.trim();
