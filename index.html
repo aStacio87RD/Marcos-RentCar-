@@ -139,6 +139,8 @@
       transition: all 0.3s ease;
     }
 
+    .hero-text a:hover { transform: scale(1.08); }
+
     section {
       padding: 3rem 1rem;
       max-width: 1100px;
@@ -157,8 +159,9 @@
 
     .services {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.8rem;
+      justify-items: center;
     }
 
     .service {
@@ -167,6 +170,7 @@
       padding: 1.5rem;
       transition: 0.4s;
       border: 1px solid rgba(255,255,255,0.1);
+      max-width: 480px;
     }
 
     .service:hover {
@@ -221,6 +225,22 @@
       border-top: 5px solid #00ff99;
     }
 
+    .contact a.whats-cta {
+      display: inline-block;
+      margin-top: 1rem;
+      background: linear-gradient(90deg, #25D366, #00ff99);
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .contact a.whats-cta:hover {
+      transform: scale(1.05);
+    }
+
     footer {
       text-align: center;
       background: #000814;
@@ -251,6 +271,7 @@
       .hero-text h2 { font-size: 1.6rem; }
       header h1 { font-size: 1.6rem; }
       .slider { height: 45vh; }
+      .services { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -272,11 +293,6 @@
 
   <div class="slider">
     <div class="slides">
-      <img src="https://media.gq.com.mx/photos/65eb81c6e4788bcc1e703bcd/16:9/w_2560%2Cc_limit/Autos_deportivos_de_equipos_de_la_Fo%25CC%2581rmula_1.jpg" alt="Auto Deportivo">
-      <img src="https://media.ed.edmunds-media.com/honda/cr-v/2026/oem/2026_honda_cr-v_4dr-suv_trailsport-hybrid_fq_oem_1_1600.jpg" alt="SUV">
-      <img src="https://cdn.milenio.com/uploads/media/2019/08/02/medida-involucra-minivans-fabricaron-agosto_7_0_1607_1000.jpeg" alt="Familiar">
-      <img src="https://media.revistagq.com/photos/5ca5f45abfc0eb2b9f1c814d/4:3/w_1200,h_900,c_limit/rubicon_7387.png" alt="Jeep 4x4">
-      <!-- repetimos para efecto infinito -->
       <img src="https://media.gq.com.mx/photos/65eb81c6e4788bcc1e703bcd/16:9/w_2560%2Cc_limit/Autos_deportivos_de_equipos_de_la_Fo%25CC%2581rmula_1.jpg" alt="Auto Deportivo">
       <img src="https://media.ed.edmunds-media.com/honda/cr-v/2026/oem/2026_honda_cr-v_4dr-suv_trailsport-hybrid_fq_oem_1_1600.jpg" alt="SUV">
       <img src="https://cdn.milenio.com/uploads/media/2019/08/02/medida-involucra-minivans-fabricaron-agosto_7_0_1607_1000.jpeg" alt="Familiar">
@@ -305,15 +321,15 @@
       </div>
 
       <div class="service">
-        <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/12/64/a1/f1.jpg" alt="Excursiones">
-        <h3 id="t10">Excursiones</h3>
-        <p id="t11">Excursiones guiadas a playas, ríos y montañas — experiencias auténticas y seguras.</p>
-      </div>
-
-      <div class="service">
         <img src="https://cdn.tourcms.com/a/13222/721/1/large.png" alt="Yates">
         <h3 id="t12">Renta de Yates</h3>
         <p id="t13">Alquila yates para celebraciones privadas, paseos al atardecer y eventos especiales.</p>
+      </div>
+
+      <div class="service">
+        <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/12/64/a1/f1.jpg" alt="Excursiones">
+        <h3 id="t10">Excursiones</h3>
+        <p id="t11">Excursiones guiadas a playas, ríos y montañas — experiencias auténticas y seguras.</p>
       </div>
     </div>
   </section>
@@ -321,9 +337,9 @@
   <section id="comentarios">
     <h2>💬 Déjanos tu comentario</h2>
     <div class="comment-box">
-      <input type="text" id="nombre" placeholder="Name" required>
-      <input type="email" id="correo" placeholder="Email" required>
-      <textarea id="comentario" rows="4" placeholder="Your Comment Here..." required></textarea>
+      <input type="text" id="nombre" placeholder="Nombre" required>
+      <input type="email" id="correo" placeholder="Correo electrónico" required>
+      <textarea id="comentario" rows="4" placeholder="Escribe tu comentario aquí..." required></textarea>
       <button onclick="enviarWhatsApp()">Enviar por WhatsApp</button>
     </div>
   </section>
@@ -340,141 +356,6 @@
   <footer id="t18">© 2025 Marcos Rent Car | Punta Cana, República Dominicana</footer>
 
   <script>
-    // Traducciones: 18 entradas (t1..t18)
-    const texts = {
-      es: [
-        "🚗 Marcos Rent Car", // t1
-        "Conduce el Futuro del Turismo en Punta Cana", // t2
-        "Explora con Estilo, Conduce con Libertad", // t3
-        "💬 Reserva por WhatsApp", // t4
-        "Servicios Premium", // t5
-        "Renta de Autos", // t6
-        "Autos deportivos, familiares y SUV modernos, perfectos para cualquier viaje.", // t7
-        "Transporte VIP", // t8
-        "Viaja con lujo y puntualidad, con chofer privado desde y hacia el aeropuerto.", // t9
-        "Excursiones", // t10
-        "Excursiones guiadas a playas, ríos y montañas — experiencias auténticas y seguras.", // t11
-        "Renta de Yates", // t12
-        "Alquila yates para celebraciones privadas, paseos al atardecer y eventos especiales.", // t13
-        "📞 Contáctanos", // t14
-        "WhatsApp:", // t15
-        "Email:", // t16
-        "💬 Escribir por WhatsApp", // t17
-        "© 2025 Marcos Rent Car | Punta Cana, República Dominicana" // t18
-      ],
-
-      en: [
-        "🚗 Marcos Rent Car",
-        "Drive the Future of Tourism in Punta Cana",
-        "Explore in Style, Drive with Freedom",
-        "💬 Book via WhatsApp",
-        "Premium Services",
-        "Car Rentals",
-        "Sports cars, family cars and modern SUVs — perfect for any trip.",
-        "VIP Transport",
-        "Travel with luxury and punctuality with a private driver to and from the airport.",
-        "Excursions",
-        "Guided excursions to beaches, rivers and mountains — authentic and safe experiences.",
-        "Yacht Rental",
-        "Rent yachts for private celebrations, sunset cruises and special events.",
-        "📞 Contact Us",
-        "WhatsApp:",
-        "Email:",
-        "💬 Message on WhatsApp",
-        "© 2025 Marcos Rent Car | Punta Cana, Dominican Republic"
-      ],
-
-      pt: [
-        "🚗 Marcos Rent Car",
-        "Dirija o Futuro do Turismo em Punta Cana",
-        "Explore com Estilo, Dirija com Liberdade",
-        "💬 Reserve pelo WhatsApp",
-        "Serviços Premium",
-        "Aluguel de Carros",
-        "Carros esportivos, familiares e SUVs modernos, perfeitos para qualquer viagem.",
-        "Transporte VIP",
-        "Viaje com luxo e pontualidade, com motorista particular de ida e volta ao aeroporto.",
-        "Excursões",
-        "Excursões guiadas a praias, rios e montanhas — experiências autênticas e seguras.",
-        "Aluguel de Iates",
-        "Alugue iates para celebrações privadas, passeios ao pôr do sol e eventos especiais.",
-        "📞 Contate-nos",
-        "WhatsApp:",
-        "Email:",
-        "💬 Enviar pelo WhatsApp",
-        "© 2025 Marcos Rent Car | Punta Cana, República Dominicana"
-      ],
-
-      it: [
-        "🚗 Marcos Rent Car",
-        "Guida il Futuro del Turismo a Punta Cana",
-        "Esplora con Stile, Guida con Libertà",
-        "💬 Prenota su WhatsApp",
-        "Servizi Premium",
-        "Noleggio Auto",
-        "Auto sportive, familiari e SUV moderni, perfetti per ogni viaggio.",
-        "Trasporto VIP",
-        "Viaggia con lusso e puntualità con autista privato da e verso l'aeroporto.",
-        "Escursioni",
-        "Escursioni guidate a spiagge, fiumi e montagne — esperienze autentiche e sicure.",
-        "Noleggio Yacht",
-        "Noleggia yacht per celebrazioni private, tramonti e eventi speciali.",
-        "📞 Contattaci",
-        "WhatsApp:",
-        "Email:",
-        "💬 Scrivi su WhatsApp",
-        "© 2025 Marcos Rent Car | Punta Cana, Repubblica Dominicana"
-      ],
-
-      ru: [
-        "🚗 Marcos Rent Car",
-        "Веди будущее туризма в Пунта-Кане",
-        "Исследуй со стилем, води со свободой",
-        "💬 Забронировать в WhatsApp",
-        "Премиум Услуги",
-        "Аренда Авто",
-        "Спортивные, семейные и современные внедорожники — идеально для любой поездки.",
-        "VIP Транспорт",
-        "Путешествуйте с роскошью и пунктуальностью с личным водителем до и из аэропорта.",
-        "Экскурсии",
-        "Экскурсии к пляжам, рекам и горам — безопасные и аутентичные впечатления.",
-        "Аренда Яхт",
-        "Арендуйте яхты для частных праздников, закатных прогулок и специальных событий.",
-        "📞 Свяжитесь с нами",
-        "WhatsApp:",
-        "Email:",
-        "💬 Написать в WhatsApp",
-        "© 2025 Marcos Rent Car | Пунта-Кана, Доминиканская Республика"
-      ]
-    };
-
-    function changeLang(lang) {
-      // actualizar t1..t18
-      for (let i = 1; i <= 18; i++) {
-        const el = document.getElementById("t" + i);
-        if (el && texts[lang] && texts[lang][i - 1] !== undefined) {
-          el.innerHTML = texts[lang][i - 1];
-        }
-      }
-
-      // también actualizamos atributos 'href' de los botones de WhatsApp para incluir mensajes localizados cortos
-      const whatsButtons = document.querySelectorAll('.whats-cta');
-      let msg = "";
-      switch (lang) {
-        case 'en': msg = "Hello Marcos Rent Car!"; break;
-        case 'pt': msg = "Olá Marcos Rent Car!"; break;
-        case 'it': msg = "Ciao Marcos Rent Car!"; break;
-        case 'ru': msg = "Здравствуйте Marcos Rent Car!"; break;
-        default: msg = "Hola Marcos Rent Car!";
-      }
-      whatsButtons.forEach(btn => {
-        // número por defecto (usa tu número preferido)
-        const number = btn.href.includes("18093937692") ? "18093937692" : "18094078708";
-        btn.href = `https://wa.me/${number}?text=${encodeURIComponent(msg)}`;
-      });
-    }
-
-    // función de envío del formulario por WhatsApp (usa número fijo)
     function enviarWhatsApp() {
       const nombre = document.getElementById("nombre").value.trim();
       const correo = document.getElementById("correo").value.trim();
@@ -487,16 +368,8 @@
 
       const mensaje = `Hola! 👋%0AQuiero dejar un comentario:%0A%0A*Nombre:* ${nombre}%0A*Correo:* ${correo}%0A*Comentario:* ${comentario}`;
       const numero = "18093937692";
-      const url = `https://wa.me/${numero}?text=${mensaje}`;
-      window.open(url, "_blank");
+      window.open(`https://wa.me/${numero}?text=${mensaje}`, "_blank");
     }
-
-    // establecer idioma por defecto al cargar
-    document.addEventListener('DOMContentLoaded', () => {
-      const sel = document.getElementById('lang');
-      const initial = sel.value || 'es';
-      changeLang(initial);
-    });
   </script>
 </body>
 </html>
